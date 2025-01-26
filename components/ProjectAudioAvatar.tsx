@@ -47,37 +47,8 @@ function ProjectAudioAvatar_(
 
   // return <PlasmicProjectAudioAvatar root={{ ref }} {...props} />;
 
-  const [audioSrc, setAudioSrc] = useState("");
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [disableTransition, setDisableTransition] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const router = useRouter();
-  const { query } = router;
-
-  useEffect(() => {
-    const fetchAudio = async () => {
-      try {
-        const response = await fetch("/api/audio");
-        if (response.ok) {
-          const data = await response.json();
-          setAudioSrc(data.filePath);
-        } else {
-          console.error("Error fetching audio:", response.statusText);
-        }
-      } catch (error) {
-        console.error("Error fetching audio:", error);
-      }
-      setTimeout(async () => {
-        await fetchAudio();
-      }, 200);
-    };
-
-    fetchAudio();
-  }, []);
-
-  const handleTransitionEnd = () => {
-    setDisableTransition(false);
-  };
 
   const handleAudioPlay = () => {
     setIsAudioPlaying(true);
@@ -102,19 +73,23 @@ function ProjectAudioAvatar_(
 
 
   return (
-      <div>
+      <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            justifyContent: "flex-end",
+          }}
+      >
+        <SpinningVisualizer1 analyserNode={analyzerNode!}/>
         <audio
-            style={{
-              
-            }}
             ref={audioRef}
-            src={audioSrc === "" ? undefined : audioSrc}
+            src={"./aria-math.mp3"}
             controls
             autoPlay={true}
             onPlay={handleAudioPlay}
             onPause={handleAudioPause}
         />
-        <SpinningVisualizer1 analyserNode={analyzerNode!}/>
       </div>
   );
 }

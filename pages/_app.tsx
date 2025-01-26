@@ -6,6 +6,9 @@ import Head from "next/head";
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <PlasmicRootProvider Head={Head}>
+      <Head>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <Component {...pageProps} />
     </PlasmicRootProvider>
   );

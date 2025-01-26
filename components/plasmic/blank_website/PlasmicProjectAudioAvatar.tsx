@@ -78,6 +78,7 @@ export const PlasmicProjectAudioAvatar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProjectAudioAvatar__OverridesType = {
   root?: Flex__<"div">;
+  freeBox?: Flex__<"div">;
 };
 
 export interface DefaultProjectAudioAvatarProps {
@@ -136,18 +137,26 @@ function PlasmicProjectAudioAvatar__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root
       )}
-    />
+    >
+      <div
+        data-plasmic-name={"freeBox"}
+        data-plasmic-override={overrides.freeBox}
+        className={classNames(projectcss.all, sty.freeBox)}
+      />
+    </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "freeBox"],
+  freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -210,6 +219,7 @@ export const PlasmicProjectAudioAvatar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicProjectAudioAvatar
     internalVariantProps: PlasmicProjectAudioAvatar__VariantProps,

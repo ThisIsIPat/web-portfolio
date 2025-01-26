@@ -6,6 +6,9 @@ import {
   DefaultProjectAudioAvatarProps
 } from "./plasmic/blank_website/PlasmicProjectAudioAvatar";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import SpinningVisualizer1 from "@/components/project-audio-avatar/SpinningVisualizer1";
+import {useEffect, useRef, useState} from "react";
+import {useRouter} from "next/router";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -42,7 +45,78 @@ function ProjectAudioAvatar_(
   // By default, we are just piping all ProjectAudioAvatarProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicProjectAudioAvatar root={{ ref }} {...props} />;
+  // return <PlasmicProjectAudioAvatar root={{ ref }} {...props} />;
+
+  const [audioSrc, setAudioSrc] = useState("");
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [disableTransition, setDisableTransition] = useState(true);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const router = useRouter();
+  const { query } = router;
+
+  useEffect(() => {
+    const fetchAudio = async () => {
+      try {
+        const response = await fetch("/api/audio");
+        if (response.ok) {
+          const data = await response.json();
+          setAudioSrc(data.filePath);
+        } else {
+          console.error("Error fetching audio:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error fetching audio:", error);
+      }
+      setTimeout(async () => {
+        await fetchAudio();
+      }, 200);
+    };
+
+    fetchAudio();
+  }, []);
+
+  const handleTransitionEnd = () => {
+    setDisableTransition(false);
+  };
+
+  const handleAudioPlay = () => {
+    setIsAudioPlaying(true);
+  };
+
+  const handleAudioPause = () => {
+    setIsAudioPlaying(false);
+  };
+
+  const [analyzerNode, setAnalyzerNode] = useState<AnalyserNode | null>(null);
+  if (audioRef.current && !analyzerNode) {
+    const audioContext = new (window.AudioContext)();
+    const analyser = audioContext.createAnalyser();
+    const source = audioContext.createMediaElementSource(audioRef.current);
+    source.connect(analyser);
+    analyser.connect(audioContext.destination);
+
+    analyser.fftSize = 256;
+
+    setAnalyzerNode(analyser);
+  }
+
+
+  return (
+      <div>
+        <audio
+            style={{
+              
+            }}
+            ref={audioRef}
+            src={audioSrc === "" ? undefined : audioSrc}
+            controls
+            autoPlay={true}
+            onPlay={handleAudioPlay}
+            onPause={handleAudioPause}
+        />
+        <SpinningVisualizer1 analyserNode={analyzerNode!}/>
+      </div>
+  );
 }
 
 const ProjectAudioAvatar = React.forwardRef(ProjectAudioAvatar_);

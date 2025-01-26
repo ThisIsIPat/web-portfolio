@@ -488,7 +488,48 @@ function PlasmicHomepage__RenderFunc(props: {
                           sty.text__e5Y4D
                         )}
                       >
-                        {"Audiodatei abspielen und beobachten!"}
+                        <React.Fragment>
+                          <React.Fragment>
+                            {
+                              "Dieser 3-Band Equalizer unterscheidet zwischen Tiefen, Mitten und H\u00f6hen einer beliebigen Audio-Datei.\n\nDas gro\u00dfe Ei schwingt mit den "
+                            }
+                          </React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"B\u00e4ssen"}
+                          </span>
+                          <React.Fragment>
+                            {
+                              ", die Windm\u00fchle spiegelt die Frequenzen die in der Regel eine "
+                            }
+                          </React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"Melodie "}
+                          </span>
+                          <React.Fragment>
+                            {
+                              "vorgeben und das Zahnrad dreht sich bei hohen Frequenzen wie zum Beispiel "
+                            }
+                          </React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"Cymbals"}
+                          </span>
+                          <React.Fragment>{"."}</React.Fragment>
+                        </React.Fragment>
                       </div>
                     </div>
                     <ProjectAudioAvatar
@@ -499,6 +540,35 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.projectAudioAvatar
                       )}
                     />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__xINf
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{"Audio: "}</React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {"Aria Math"}
+                        </span>
+                        <React.Fragment>{" von "}</React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ fontWeight: 700 }}
+                        >
+                          {"C418"}
+                        </span>
+                      </React.Fragment>
+                    </div>
                   </div>
                 </div>
                 <div

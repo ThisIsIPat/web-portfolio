@@ -430,6 +430,15 @@
 }
 .projectAudioAvatar:global(.__wab_instance) {
   position: relative;
+  margin: 16px 0px;
+}
+.text__xINf {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  color: #53535333;
+  font-size: 0.8em;
 }
 .leftAlign03 {
   display: flex;

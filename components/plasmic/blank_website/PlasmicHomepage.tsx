@@ -97,6 +97,7 @@ export type PlasmicHomepage__OverridesType = {
   rightAlign02?: Flex__<"div">;
   audioAvatar?: Flex__<"div">;
   aaText?: Flex__<"div">;
+  projectAudioAvatar?: Flex__<typeof ProjectAudioAvatar>;
   leftAlign03?: Flex__<"div">;
   ruleAi?: Flex__<"div">;
   raText?: Flex__<"div">;
@@ -144,7 +145,20 @@ function PlasmicHomepage__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicHomepage.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicHomepage.pageMetadata.title}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -401,12 +415,6 @@ function PlasmicHomepage__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <ProjectAudioAvatar
-                      className={classNames(
-                        "__wab_instance",
-                        sty.projectAudioAvatar__adgTj
-                      )}
-                    />
                   </div>
                 </div>
                 <div
@@ -484,9 +492,11 @@ function PlasmicHomepage__RenderFunc(props: {
                       </div>
                     </div>
                     <ProjectAudioAvatar
+                      data-plasmic-name={"projectAudioAvatar"}
+                      data-plasmic-override={overrides.projectAudioAvatar}
                       className={classNames(
                         "__wab_instance",
-                        sty.projectAudioAvatar__yHPuE
+                        sty.projectAudioAvatar
                       )}
                     />
                   </div>
@@ -588,6 +598,7 @@ const PlasmicDescendants = {
     "rightAlign02",
     "audioAvatar",
     "aaText",
+    "projectAudioAvatar",
     "leftAlign03",
     "ruleAi",
     "raText"
@@ -608,6 +619,7 @@ const PlasmicDescendants = {
     "rightAlign02",
     "audioAvatar",
     "aaText",
+    "projectAudioAvatar",
     "leftAlign03",
     "ruleAi",
     "raText"
@@ -620,6 +632,7 @@ const PlasmicDescendants = {
     "rightAlign02",
     "audioAvatar",
     "aaText",
+    "projectAudioAvatar",
     "leftAlign03",
     "ruleAi",
     "raText"
@@ -627,9 +640,10 @@ const PlasmicDescendants = {
   leftAlign01: ["leftAlign01", "dieseWebsite", "dwText"],
   dieseWebsite: ["dieseWebsite", "dwText"],
   dwText: ["dwText"],
-  rightAlign02: ["rightAlign02", "audioAvatar", "aaText"],
-  audioAvatar: ["audioAvatar", "aaText"],
+  rightAlign02: ["rightAlign02", "audioAvatar", "aaText", "projectAudioAvatar"],
+  audioAvatar: ["audioAvatar", "aaText", "projectAudioAvatar"],
   aaText: ["aaText"],
+  projectAudioAvatar: ["projectAudioAvatar"],
   leftAlign03: ["leftAlign03", "ruleAi", "raText"],
   ruleAi: ["ruleAi", "raText"],
   raText: ["raText"]
@@ -654,6 +668,7 @@ type NodeDefaultElementType = {
   rightAlign02: "div";
   audioAvatar: "div";
   aaText: "div";
+  projectAudioAvatar: typeof ProjectAudioAvatar;
   leftAlign03: "div";
   ruleAi: "div";
   raText: "div";
@@ -734,6 +749,7 @@ export const PlasmicHomepage = Object.assign(
     rightAlign02: makeNodeComponent("rightAlign02"),
     audioAvatar: makeNodeComponent("audioAvatar"),
     aaText: makeNodeComponent("aaText"),
+    projectAudioAvatar: makeNodeComponent("projectAudioAvatar"),
     leftAlign03: makeNodeComponent("leftAlign03"),
     ruleAi: makeNodeComponent("ruleAi"),
     raText: makeNodeComponent("raText"),
@@ -744,7 +760,7 @@ export const PlasmicHomepage = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "Patrick Hein - Freelancer",
       description: "",
       ogImageSrc: "",
       canonical: ""

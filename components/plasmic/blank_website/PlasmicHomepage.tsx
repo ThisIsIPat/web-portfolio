@@ -205,7 +205,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(sty.img)}
                   displayHeight={"auto"}
                   displayMaxHeight={"none"}
-                  displayMaxWidth={"76.4vw"}
+                  displayMaxWidth={"none"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"50%"}
@@ -488,48 +488,9 @@ function PlasmicHomepage__RenderFunc(props: {
                           sty.text__e5Y4D
                         )}
                       >
-                        <React.Fragment>
-                          <React.Fragment>
-                            {
-                              "Dieser 3-Band Equalizer unterscheidet zwischen Tiefen, Mitten und H\u00f6hen einer beliebigen Audio-Datei.\n\nDas gro\u00dfe Ei schwingt mit den "
-                            }
-                          </React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 700 }}
-                          >
-                            {"B\u00e4ssen"}
-                          </span>
-                          <React.Fragment>
-                            {
-                              ", die Windm\u00fchle spiegelt die Frequenzen die in der Regel eine "
-                            }
-                          </React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 700 }}
-                          >
-                            {"Melodie "}
-                          </span>
-                          <React.Fragment>
-                            {
-                              "vorgeben und das Zahnrad dreht sich bei hohen Frequenzen wie zum Beispiel "
-                            }
-                          </React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 700 }}
-                          >
-                            {"Cymbals"}
-                          </span>
-                          <React.Fragment>{"."}</React.Fragment>
-                        </React.Fragment>
+                        {
+                          "Dieser 3-Band Equalizer unterscheidet zwischen Tiefen, Mitten und H\u00f6hen einer beliebigen Audio-Datei.\n\nZus\u00e4tzlich zu der Version auf dieser Website wurde auch experimentiert, wie einfach es gehen kann, Audio auf einer eigenen anderen Website hochzuladen und sie dann hier abspielen zu lassen.\n\nIdee dahinter ist, irgendwann Sprache per Mikrofon zu erkennen, zu transkribieren, darauf durch eine LLM-KI eine Antwort zu generieren, die Antwort zu einer Audio zu transformieren und diese Audio hier abzuspielen. Ergo: Man k\u00f6nnte sich dann mit diesem Avatar unterhalten.\n\nAus praktischen Gr\u00fcnden wird hier nur dargestellt, wie der Avatar Audio visualisiert. Viel Spa\u00df!"
+                        }
                       </div>
                     </div>
                     <ProjectAudioAvatar

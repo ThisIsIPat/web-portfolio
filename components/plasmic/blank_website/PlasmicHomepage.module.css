@@ -68,6 +68,7 @@
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 38.2%;
+  min-height: 22em;
   padding: 32px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
@@ -79,11 +80,15 @@
 .who {
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: sticky;
   width: auto;
   height: auto;
   flex-shrink: 1;
   max-width: 100%;
+  left: 32px;
+  top: 32px;
+  z-index: 1;
+  padding: 128px 0px 0px;
 }
 .who > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -224,7 +229,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 700px;
+  max-width: 800px;
   min-width: 0;
 }
 .projects > :global(.__wab_flex-container) {

@@ -86,7 +86,6 @@ function ProjectAudioAvatar_(
             ref={audioRef}
             src={"./aria-math.mp3"}
             controls
-            autoPlay={true}
             onPlay={handleAudioPlay}
             onPause={handleAudioPause}
         />

@@ -1,0 +1,113 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  justify-self: flex-start;
+}
+.general0Container {
+  flex-direction: column;
+  position: absolute;
+  width: 0px;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  top: auto;
+  left: auto;
+  z-index: 1;
+  bottom: 120%;
+  display: none;
+}
+.root:hover .general0Container {
+  display: flex;
+}
+.textContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  background: #424743;
+  flex-shrink: 0;
+  flex-grow: 0;
+  position: absolute;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.textContainerlanguage_javaScript {
+  background: #78785b;
+}
+.textContainerlanguage_typeScript {
+  background: #556571;
+}
+.textContainerlanguage_python {
+  background: linear-gradient(90deg, #567adf 0%, #868640 100%);
+}
+.textContainerlanguage_nodeJs {
+  background: linear-gradient(45deg, #3a9826 0%, #59c264 100%);
+}
+.text {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  color: #ffffff;
+  background: none;
+  font-size: 0.8em;
+  text-align: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+  white-space: pre;
+}
+.textlanguage_nodeJs {
+  padding-right: 0px;
+}
+.textlanguage_unnamedVariant {
+  padding-top: 0px;
+}
+.arrow0Container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  align-items: flex-end;
+  justify-content: center;
+  width: auto;
+  height: 0px;
+  left: auto;
+  top: auto;
+  right: auto;
+  flex-shrink: 0;
+}
+.freeBox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  background: #424743;
+  transform: translateX(0px) translateY(0%) translateZ(0px) rotateX(0deg)
+    rotateY(0deg) rotateZ(45deg);
+  z-index: -1;
+  left: auto;
+  top: auto;
+  flex-shrink: 0;
+}
+.svg {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+  min-height: 0;
+}

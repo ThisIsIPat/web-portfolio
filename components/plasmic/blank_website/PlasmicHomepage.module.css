@@ -341,9 +341,6 @@
   max-width: 100%;
   color: #53535399;
 }
-.projectAudioAvatar__adgTj:global(.__wab_instance) {
-  position: relative;
-}
 .rightAlign02 {
   display: flex;
   flex-direction: row;
@@ -431,7 +428,7 @@
   max-width: 100%;
   color: #53535399;
 }
-.projectAudioAvatar__yHPuE:global(.__wab_instance) {
+.projectAudioAvatar:global(.__wab_instance) {
   position: relative;
 }
 .leftAlign03 {
